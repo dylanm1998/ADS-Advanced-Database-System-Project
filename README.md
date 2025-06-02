@@ -3,6 +3,11 @@ This is the source for the final project at the ADS course, which is implemented
 
 We installed a new server on Ubuntu 24.04.2 LTS, and we built MongoDB Community.
 
+Hardware Info:
+  - CPU: Intel i7-6700 (8) @ 4.000GHz
+  - GPU: Intel HD Graphics 530
+  - Memory: 31975MiB
+
 Source of Ubuntu 24.04.2 LTS:
   - https://ubuntu.com/download/desktop
 
