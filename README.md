@@ -1,7 +1,11 @@
 # ADS(Advanced Database System) Project
 This is the source for the final project at the ADS course, which is implemented by Dylan Meng.
+Goal:
+ - Exploring the preferences of different age groups, genders, and occupations for various movie genres
 
-We installed a new server on Ubuntu 24.04.2 LTS, and we built MongoDB Community.
+Preparations:
+ - We installed a new server on Ubuntu 24.04.2 LTS, and we built MongoDB Community.
+ - We utilized the MovieLens-100k dataset for this task.
 
 Hardware Info:
   - CPU: Intel i7-6700 (8) @ 4.000GHz
