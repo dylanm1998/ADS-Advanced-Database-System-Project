@@ -23,9 +23,9 @@ The related dataset can be found here:
  - https://grouplens.org/datasets/movielens/
 
 The libraries you need for running the code:
- - conda install pandas
- - conda install pymongo
- - conda install bokeh
+ - conda install pandas / pip install pandas
+ - conda install pymongo / install pymongo
+ - conda install bokeh / install bokeh
    
 If you have any comments for the task, 
   Please contact dylanmeng@chungbuk.ac.kr
