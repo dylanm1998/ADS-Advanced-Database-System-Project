@@ -24,8 +24,8 @@ The related dataset can be found here:
 
 The libraries you need for running the code:
  - conda install pandas / pip install pandas
- - conda install pymongo / install pymongo
- - conda install bokeh / install bokeh
+ - conda install pymongo / pip install pymongo
+ - conda install bokeh / pip install bokeh
    
 If you have any comments for the task, 
   Please contact dylanmeng@chungbuk.ac.kr
