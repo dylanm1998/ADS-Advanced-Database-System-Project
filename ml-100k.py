@@ -6,7 +6,6 @@ from bokeh.models import ColumnDataSource
 
 output_notebook()
 
-
 def populate_data_if_needed(users_col, movies_col, ratings_col):
     """
     Load raw MovieLens data into MongoDB if collections are empty.
@@ -39,7 +38,6 @@ def populate_data_if_needed(users_col, movies_col, ratings_col):
         print(f"Warning: could not insert into ratings collection: {e}")
 
     print("Data population complete.")
-
 
 def populate_user_movie_info_if_needed(userinfo_genres_col, ratings_col):
     """
@@ -94,7 +92,6 @@ def populate_user_movie_info_if_needed(userinfo_genres_col, ratings_col):
 
     print("ratings_userinfo_genres has been created and populated.")
 
-
 def build_and_insert_stats(source_col, target_col, group_field: str, genre_count: int = 19):
     """
     Use MongoDB aggregation to compute average rating and count per (group_field, genre_index).
@@ -146,7 +143,6 @@ def build_and_insert_stats(source_col, target_col, group_field: str, genre_count
     except Exception as e:
         print(f"Error creating stats for {group_field}: {e}")
 
-
 def populate_statistics_if_needed(userinfo_genres_col, age_stats_col, gender_stats_col, occupation_stats_col):
     """
     Populate age, gender, and occupation statistics collections by calling build_and_insert_stats.
@@ -154,7 +150,6 @@ def populate_statistics_if_needed(userinfo_genres_col, age_stats_col, gender_sta
     build_and_insert_stats(userinfo_genres_col, age_stats_col, group_field="age")
     build_and_insert_stats(userinfo_genres_col, gender_stats_col, group_field="gender")
     build_and_insert_stats(userinfo_genres_col, occupation_stats_col, group_field="occupation")
-
 
 def age_to_group(age: int) -> str:
     """
@@ -164,7 +159,6 @@ def age_to_group(age: int) -> str:
         return "0-9"
     lower = (age // 10) * 10
     return f"{lower}-{lower + 9}"
-
 
 def make_bokeh_charts(doc_df: pd.DataFrame, group_field: str, group_values: list, genre_labels: list, output_html: str):
     """
@@ -203,7 +197,6 @@ def make_bokeh_charts(doc_df: pd.DataFrame, group_field: str, group_values: list
         output_file(output_html)
         show(gridplot(plots))
 
-
 def plot_statistics(age_stats_col, gender_stats_col, occupation_stats_col, genre_labels):
     """
     Fetch each statistics collection into a DataFrame, then call make_bokeh_charts.
@@ -234,7 +227,6 @@ def plot_statistics(age_stats_col, gender_stats_col, occupation_stats_col, genre
         all_occs = sorted(df_occ["occupation"].unique())
         df_occ = df_occ[["occupation", "genre_index", "avg_rating", "count"]].rename(columns={"occupation": "group"})
         make_bokeh_charts(df_occ, group_field="group", group_values=all_occs, genre_labels=genre_labels, output_html="occupation_charts.html",)
-
 
 if __name__ == "__main__":
     # 1) Connect to MongoDB
