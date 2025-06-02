@@ -1,4 +1,4 @@
-# ADS-Advanced-Database-System-Project
+# ADS(Advanced Database System) Project
 This is the source for the final project at the ADS course, which is implemented by Dylan Meng.
 
 We installed a new server on Ubuntu 24.04.2 LTS, and we built MongoDB Community.
