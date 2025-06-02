@@ -50,12 +50,6 @@ def populate_user_movie_info_if_needed(userinfo_genres_col, ratings_col):
         print("ratings_userinfo_genres already has data. Skipping join step.")
         return
 
-    # Ensure indexes exist for faster lookups (optional, but recommended)
-    # ratings_col.create_index("user_id")
-    # ratings_col.create_index("movie_id")
-    # users_col.create_index("user_id")
-    # movies_col.create_index("movie_id")
-
     pipeline = [
         {
             "$lookup": {
