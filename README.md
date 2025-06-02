@@ -1,5 +1,6 @@
 # ADS(Advanced Database System) Project
 This is the source for the final project at the ADS course, which is implemented by Dylan Meng.
+
 Goal:
  - Exploring the preferences of different age groups, genders, and occupations for various movie genres
 
