@@ -230,6 +230,7 @@ def plot_statistics(age_stats_col, gender_stats_col, occupation_stats_col, genre
 
 if __name__ == "__main__":
     # 1) Connect to MongoDB
+    # Using 'localhost' works when the code is running on the database host, which is what I am doing. Otherwise, use the IP address.
     client = MongoClient("mongodb://localhost:27017/")
     db = client["movielens_100k"]
 
